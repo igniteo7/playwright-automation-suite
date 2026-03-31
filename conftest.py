@@ -13,12 +13,6 @@ import pytest
 BASE_URL = "https://www.saucedemo.com"
 
 
-def pytest_addoption(parser):
-    """Add a --slowmo flag so you can watch the browser during debugging."""
-    parser.addoption("--slowmo", action="store", default=0, type=int,
-                     help="Slow down Playwright actions by N milliseconds")
-
-
 @pytest.fixture(scope="session")
 def browser_context_args(browser_context_args, pytestconfig):
     """
